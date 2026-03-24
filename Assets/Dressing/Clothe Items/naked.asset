@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61baf725e2bf94c4891751b937a9cf52, type: 3}
-  m_Name: Dress
+  m_Script: {fileID: 11500000, guid: 6a0b9f6470a2110428b0384e140d9861, type: 3}
+  m_Name: naked
   m_EditorClassIdentifier: 
-  categoryType: 5
-  items:
-  - {fileID: 11400000, guid: cc9e63a26789cbe44977a676b159820c, type: 2}
+  itemName: No clothes
+  icon: {fileID: 21300000, guid: 51ee7423e5ed49541b6cfec4a5195b6a, type: 3}
+  itemDescription: It's good to be naked
+  sexyScore: 0
+  elegantScore: 0

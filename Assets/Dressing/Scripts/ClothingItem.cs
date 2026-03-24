@@ -17,7 +17,6 @@ public class ClothingItem : ScriptableObject
     [Header("Basic Info")]
     public string itemName;
     public Sprite icon;
-    public ClothesType clothesType;
     [TextArea]
     public string itemDescription;
 

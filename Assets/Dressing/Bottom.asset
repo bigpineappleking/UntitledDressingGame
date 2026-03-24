@@ -9,8 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 61baf725e2bf94c4891751b937a9cf52, type: 3}
   m_Name: Bottom
-  m_EditorClassIdentifier: Assembly-CSharp::ClothingCollection
+  m_EditorClassIdentifier: 
   categoryType: 2
-  items: []
+  items:
+  - {fileID: 11400000, guid: f4a125e0a16b0184a9021295c6ad332e, type: 2}
+  - {fileID: 11400000, guid: e7d93f6e571b2054c93db25dd02f1a3c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
+  - {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
