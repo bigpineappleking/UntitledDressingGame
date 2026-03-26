@@ -13,8 +13,8 @@ public class IconTabController : MonoBehaviour, IPointerClickHandler, IPointerEn
 
     [SerializeField]
     private Image _highlight;
-    private ClothingCategoryManager _manager;
-    public ClothesType _clothesType{get; private set;}
+    private IClothingUIManager _manager;
+    public ScriptableObject uiAssets;
 
     private float _currHighlightAlpha;
     private Coroutine _lerpCoroutine;
@@ -51,14 +51,14 @@ public class IconTabController : MonoBehaviour, IPointerClickHandler, IPointerEn
         StartLerp(0);
     }
 
-    public void SetCategoryManager(ClothingCategoryManager manager)
+    public void SetCategoryManager(IClothingUIManager manager)
     {
         _manager = manager;
     }
 
-    public void SetClothesType(ClothesType type)
+    public void SetAssets(ScriptableObject asset)
     {
-        _clothesType = type;
+        uiAssets = asset;
     }
 
     private void StartLerp(float targetValue)

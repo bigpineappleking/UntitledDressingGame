@@ -5,11 +5,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClothingCategoryManager : MonoBehaviour
+
+public interface IClothingUIManager
+{
+    void OnIconTabSwitch(IconTabController currIcon);
+    void LoadUI();
+}
+public class ClothingCategoryManager : MonoBehaviour, IClothingUIManager
 {
     // Start is called before the first frame update
     [SerializeField]
-    private Sprite[] _clotheCategoryIcons;
+    private List<Sprite> _spriteIcons;
 
     [SerializeField]
     private ClothingCollection[] _clotheCategoryCollection;
@@ -26,15 +32,20 @@ public class ClothingCategoryManager : MonoBehaviour
 
     void Awake()
     {
-        for(int i = 0; i < _clotheCategoryIcons.Length; i++)
+        LoadUI();
+    }
+
+    public void LoadUI()
+    {
+        for(int i = 0; i < _spriteIcons.Count; i++)
         {
             var clotheIconUIPrefab = Instantiate(_clotheIconUIPrefab, transform);
             var icon = clotheIconUIPrefab.GetComponent<UnityEngine.UI.Image>();
-            icon.sprite = _clotheCategoryIcons[i];
+            icon.sprite = _spriteIcons[i];
 
             IconTabController iconTab = clotheIconUIPrefab.GetComponent<IconTabController>();
             iconTab.SetCategoryManager(this);
-            iconTab.SetClothesType(_clotheCategoryCollection[i].categoryType);
+            iconTab.SetAssets(_clotheCategoryCollection[i]);
             if(_clotheCategoryCollection[i].categoryType == _activeClothesType)
             {   
                 OnIconTabSwitch(iconTab);
@@ -49,36 +60,10 @@ public class ClothingCategoryManager : MonoBehaviour
 
         if(!_activeiconTab.IsUnityNull()) _activeiconTab.DisableTab();
         _activeiconTab = currIcon;
-        _activeClothesType = currIcon._clothesType;
 
         //Now load single clothes icon from new active clothes type
-        _clothingItemManager.LoadNewClothesType(FindCollectionByType(_activeClothesType));
-    }
-
-    private ClothingCollection FindCollectionByType(ClothesType type)
-    {
-        foreach(ClothingCollection c in _clotheCategoryCollection)
-        {
-            if(c.categoryType == type) return c;
-        }
-        Debug.LogError("Cannot find clothes collection by type. Check UI setup.");
-        return null;
-    }
-
-
-    public void SetCurrentClothesType(ClothesType type)
-    {
-        _activeClothesType = type;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Warning: this is not robust. consider fixing.
+        _clothingItemManager.SetCurrClothesCollection((ClothingCollection)currIcon.uiAssets);
+        _clothingItemManager.LoadUI();
     }
 }
