@@ -15,3 +15,4 @@ MonoBehaviour:
   categoryType: 5
   items:
   - {fileID: 11400000, guid: cc9e63a26789cbe44977a676b159820c, type: 2}
+  - {fileID: 11400000, guid: d2bab7d98e0485745a46337cea36524b, type: 2}

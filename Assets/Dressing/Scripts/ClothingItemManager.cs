@@ -13,15 +13,35 @@ public class ClothingItemManager : MonoBehaviour, IClothingUIManager
 
     private ClothingCollection _currClothesCollection;
     private IconTabController _activeclothes;
+    private List<IconTabController> _activeAccessories;
 
     //Ui change, set selected clothes at manager
     public void OnIconTabSwitch(IconTabController currIcon)
     {
-        if(currIcon == _activeclothes) return;
-        currIcon.EnableTab();
+        if(_currClothesCollection.categoryType == ClothesType.Accessories){
+            //turn off accessories when select repeat accessories
+            if (!_activeAccessories.IsUnityNull() && _activeAccessories.Contains(currIcon))
+            {
+                currIcon.DisableTab();
+                _activeAccessories.Remove(currIcon);
+            }else{
+                //select new accessories when have less than five
+                if(_activeAccessories.Count < 5){
+                    currIcon.EnableTab();
+                    _activeAccessories.Add(currIcon);
+                }
+            }
+        }
+        else
+        {
+            //nothing happens when reselect selected clothes
+            if(currIcon == _activeclothes) return;
 
-        if(!_activeclothes.IsUnityNull()) _activeclothes.DisableTab();
-        _activeclothes = currIcon;
+            //turn off old clothes and turn on new clothes
+            if(!_activeclothes.IsUnityNull()) _activeclothes.DisableTab();
+            _activeclothes = currIcon;
+            currIcon.EnableTab();
+        }
 
         CharacterClothesManager.instance.SetEquippedClothesByType(_currClothesCollection.categoryType, (ClothingItem)currIcon.uiAssets);
     }
@@ -76,7 +96,18 @@ public class ClothingItemManager : MonoBehaviour, IClothingUIManager
         }
         else
         {
-            //TODO: Get equipped accessories
+            if(!_activeAccessories.IsUnityNull()) _activeAccessories.Clear();
+            _activeAccessories = new List<IconTabController>();
+            var equippedClothes = CharacterClothesManager.instance.equippedAccessories;
+            if (!equippedClothes.IsUnityNull())
+            {
+                foreach(ClothingItem c in equippedClothes)
+                {
+                    var tab = FindEquippedClothesTab(c);
+                    _activeAccessories.Add(tab);
+                    tab.EnableTab();
+                }
+            }
         }
     }
 

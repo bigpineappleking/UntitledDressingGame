@@ -66,9 +66,9 @@
     <Compile Include="Assets\Dressing\Scripts\ClothingCollection.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingItem.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingCategoryManager.cs" />
-    <Compile Include="Assets\Dressing\ClothingItemManager.cs" />
+    <Compile Include="Assets\Dressing\Scripts\ClothingItemManager.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingItemEditor.cs" />
-    <Compile Include="Assets\Dressing\CharacterClothesManager.cs" />
+    <Compile Include="Assets\Dressing\Scripts\CharacterClothesManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

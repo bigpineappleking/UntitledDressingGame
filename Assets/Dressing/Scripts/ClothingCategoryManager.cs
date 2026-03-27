@@ -30,7 +30,7 @@ public class ClothingCategoryManager : MonoBehaviour, IClothingUIManager
     [SerializeField]
     private ClothingItemManager _clothingItemManager;
 
-    void Awake()
+    void Start()
     {
         LoadUI();
     }

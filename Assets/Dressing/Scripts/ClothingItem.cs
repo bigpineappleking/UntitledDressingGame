@@ -23,4 +23,10 @@ public class ClothingItem : ScriptableObject
     [Header("Style Scores")]
     public int sexyScore;
     public int elegantScore;
+
+    public int renderOrder;
+    public Vector3 uiOffset;
+    [HideInInspector]
+    public GameObject associatedClothes;
+    public bool isDefault;
 }
