@@ -69,6 +69,7 @@
     <Compile Include="Assets\Dressing\Scripts\ClothingItemManager.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingItemEditor.cs" />
     <Compile Include="Assets\Dressing\Scripts\CharacterClothesManager.cs" />
+    <Compile Include="Assets\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

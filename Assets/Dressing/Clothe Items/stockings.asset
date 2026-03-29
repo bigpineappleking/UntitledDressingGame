@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stocking
   icon: {fileID: 21300000, guid: d1f4b7728d09fa340aaff6129bfc8039, type: 3}
-  clothesType: 4
   itemDescription: 
   sexyScore: 0
   elegantScore: 0
+  renderOrder: 0
+  uiOffset: {x: 0, y: 0, z: 0}
+  associatedClothes: {fileID: 0}
+  isDefault: 0

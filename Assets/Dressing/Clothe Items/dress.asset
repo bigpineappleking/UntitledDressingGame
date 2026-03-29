@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: 
   sexyScore: 0
   elegantScore: 0
-  renderOrder: 5
+  renderOrder: 10
   uiOffset: {x: 0, y: 0, z: 0}
   associatedClothes: {fileID: 0}
   isDefault: 0
