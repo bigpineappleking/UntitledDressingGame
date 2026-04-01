@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce12c3abd4a0e248a0e878ae50027bb, type: 3}
+  m_Name: test_start
+  m_EditorClassIdentifier: 
+  code: 1A
+  story: "Cinder was a quiet young man reduced to servitude in his own home after
+    his father\u2019s death. His stepmother and stepbrothers treated him as little
+    more than ash and labor, while they prepared for the royal ball where the heir,
+    Prince Elara, would choose a partner.\n\nLeft behind, Cinder wished only to be
+    seen once as himself. A mysterious spirit answered, transforming his rags into
+    elegant attire and sending him to the palace with a warning that the magic would
+    end at midnight.\n\nAt the ball, Cinder moved with quiet grace, drawing Elara\u2019s
+    attention not through status, but sincerity. For a fleeting moment, he belonged
+    among silk and light. As midnight struck, he fled in fear, leaving behind a single
+    glass slipper.\n\nThe kingdom searched for the one who fit it. When the guards
+    arrived at his home, Cinder stepped forward, caught between hope and fear, knowing
+    that being seen could either free him or bind him further."
+  defaultStory: {fileID: 11400000, guid: 7f1610b44ac7b6b46ad6a467bbb97b89, type: 2}
+  storyBranches:
+  - {fileID: 11400000, guid: 7f1610b44ac7b6b46ad6a467bbb97b89, type: 2}
