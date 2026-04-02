@@ -69,9 +69,9 @@
     <Compile Include="Assets\Dressing\Scripts\ClothingCategoryManager.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingItemManager.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingItemEditor.cs" />
+    <Compile Include="Assets\DialogueUIManager.cs" />
     <Compile Include="Assets\Dressing\Scripts\CharacterClothesManager.cs" />
     <Compile Include="Assets\Dialogue\Scripts\StoryNode.cs" />
-    <Compile Include="Assets\DialogueUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

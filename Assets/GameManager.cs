@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _introUI;
+
+    [SerializeField]
+    private GameObject _dressingUI;
+
+    [SerializeField]
+    private GameObject _dialogueUI;
     void Awake()
     {
         LoadIntroPage();
