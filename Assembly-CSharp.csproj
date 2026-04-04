@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Dressing\Scripts\IconTabController.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingCollection.cs" />
-    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\GameFlowManager.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingItem.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingCategoryManager.cs" />
     <Compile Include="Assets\Dressing\Scripts\ClothingItemManager.cs" />
