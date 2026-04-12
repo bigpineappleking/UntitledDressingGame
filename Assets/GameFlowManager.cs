@@ -95,11 +95,13 @@ public class GameFlowManager : MonoBehaviour
         {
             _introUI.SetActive(false);
             _dressingUI.SetActive(true);
+            CharacterClothesManager.instance.Show();
             _dialogueUI.SetActive(false);
         }else if (targetUI == UIType.Dialogue)
         {
             _introUI.SetActive(false);
             _dressingUI.SetActive(false);
+            CharacterClothesManager.instance.Hide();
             _dialogueUI.SetActive(false);
         }
         else

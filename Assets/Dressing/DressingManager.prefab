@@ -249,3 +249,5 @@ MonoBehaviour:
   _defaultClothes: {fileID: 11400000, guid: df0758e266b1dd34783afefae05c3b2c, type: 2}
   _clothesContainer: {fileID: 7088515264823655636}
   _clothesPrefab: {fileID: 3970245720523714847, guid: f0c369e9b4920fa428db70e0501eaff8, type: 3}
+  _characterSprite: {fileID: 7088515265254551930}
+  _characterBg: {fileID: 7088515265584997289}

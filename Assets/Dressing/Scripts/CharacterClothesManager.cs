@@ -15,9 +15,14 @@ public class CharacterClothesManager : MonoBehaviour
     private GameObject _clothesContainer;
     [SerializeField]
     private GameObject _clothesPrefab;
+    [SerializeField]
+    private GameObject _characterSprite;
+    [SerializeField]
+    private GameObject _characterBg;
     void Awake()
     {
         instance = this;
+        Hide();
 
         equippedClothes = new Dictionary<ClothesType, ClothingItem>();
         equippedAccessories = new List<ClothingItem>();
@@ -120,5 +125,17 @@ public class CharacterClothesManager : MonoBehaviour
     {
         equippedClothes[ClothesType.Bottom] = _defaultClothes;
         PutClothesOnCharacter(_defaultClothes);
+    }
+
+    public void Show()
+    {
+        _characterBg.SetActive(true);
+        _characterSprite.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        _characterBg.SetActive(false);
+        _characterSprite.SetActive(false);
     }
 }

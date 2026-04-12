@@ -232,4 +232,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1493365390947809207}
   normalCharDelay: 0.01
-  fastCharDelay: 0.005
+  fastCharDelay: 0.002

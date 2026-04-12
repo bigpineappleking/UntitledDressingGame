@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class DialogueUIManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class DialogueUIManager : MonoBehaviour
     private int _currentParagraphIndex = 0;
     private bool _isTyping = false;
     private bool _isFastMode = false;
+    private bool _finishCurrentStory = true;
     private Coroutine _typingCoroutine;
     //[TextArea(10,50)]
     //public string test;
@@ -22,7 +24,7 @@ public class DialogueUIManager : MonoBehaviour
         //SetInputText(test);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
@@ -103,8 +105,17 @@ public class DialogueUIManager : MonoBehaviour
         }
         else
         {
-            // Load next paragraph
-            LoadNextParagraph();
+            if (!_finishCurrentStory)
+            {
+                // Load next paragraph
+                LoadNextParagraph();
+            }
+            else
+            {
+                //paragraph finish. click to enter dressing
+                GameFlowManager.instance.LoadDressingUI();
+            }
+
         }
     }
 
@@ -114,6 +125,11 @@ public class DialogueUIManager : MonoBehaviour
         if (_currentParagraphIndex < _paragraphs.Length)
         {
             StartTypingParagraph(_currentParagraphIndex);
+        }
+        else
+        {
+            Debug.Log("Finish typing story node");
+            _finishCurrentStory = true;
         }
     }
 
@@ -148,6 +164,7 @@ public class DialogueUIManager : MonoBehaviour
     public void SetInputText(string text)
     {
         ParseParagraphs(text);
+        _finishCurrentStory = false;
         if (_paragraphs.Length > 0)
         {
             StartTypingParagraph(0);
